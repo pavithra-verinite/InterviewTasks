@@ -1,0 +1,179 @@
+
+--------------------------------------
+Java Program to Count Number of Duplicate Words in String
+
+public class DuplicateWord {    
+    public static void main(String[] args) {    
+        String string = "Big black bug bit a big black dog on his big black nose";    
+        int count;    
+            
+          
+        string = string.toLowerCase();    
+            
+            
+        String words[] = string.split(" ");    
+            
+        System.out.println("Duplicate words in a given string : ");     
+        for(int i = 0; i < words.length; i++) {    
+            count = 1;    
+            for(int j = i+1; j < words.length; j++) {    
+                if(words[i].equals(words[j])) {    
+                    count++;    
+                   
+                    words[j] = "0";    
+                }    
+            }    
+                
+            
+            if(count > 1 && words[i] != "0")    
+                System.out.println(words[i]);    
+        }    
+    }    
+} 
+------------------------------------------------
+Java Program to Count Number of Words in Given String
+
+class GFG
+{
+	
+	
+	public static int
+	countWords(String str)
+	{
+		
+		
+		if (str == null || str.isEmpty())
+			return 0;
+		
+		
+		String[] words = str.split("\\s+");
+		
+		
+		return words.length;
+	}
+	
+	
+	public static void main(String args[])
+	{
+		
+		
+		String str =
+		"One two	 three\n four\tfive ";
+		
+		
+		System.out.println("No of words : " +
+		countWords(str));
+	}
+}
+
+----------------------------------------------------
+Java Program to Count the Number of Occurrences of Substring in a String
+
+class Main
+{
+    
+    public static boolean isEmpty(String s) {
+        return s == null || s.length() == 0;
+    }
+ 
+   
+    public static int countMatches(String text, String str)
+    {
+        if (isEmpty(text) || isEmpty(str)) {
+            return 0;
+        }
+ 
+        int index = 0, count = 0;
+        while (true)
+        {
+            index = text.indexOf(str, index);
+            if (index != -1)
+            {
+                count ++;
+                index += str.length();
+            }
+            else {
+                break;
+            }
+        }
+ 
+        return count;
+    }
+ 
+    public static void main(String[] args)
+    {
+        String text = "AABCCAAADCBBAADBBC";
+        String str = "AA";
+ 
+        int count = countMatches(text, str);
+        System.out.println(count);
+}
+------------------------------------------------------------------
+Java Program to Count the Occurrences of Each Character in String
+
+import java.util.HashMap;     
+public class CountOccuranceOfChar2  
+{  
+public static void main(String args[])   
+{  
+String str = "google imp";  
+  
+HashMap <Character, Integer> charCount = new HashMap<>();  
+for (int i = str.length() - 1; i >= 0; i--)   
+{  
+if(charCount.containsKey(str.charAt(i)))   
+{  
+int count = charCount.get(str.charAt(i));  
+charCount.put(str.charAt(i), ++count);  
+}   
+else   
+{  
+charCount.put(str.charAt(i),1);  
+}  
+}  
+System.out.println(charCount);  
+}  
+}  
+
+---------------------------------------------------------------
+Java Program to Reverse an Array Without Using Another Array
+import java.util.Arrays;
+
+public class ArrayReverse {
+
+    public int[] reverse(int [] array){
+
+        if(array == null || array.length <= 1){
+            System.out.println("Invalid array.");
+        }
+        for (int i = 0; i < array.length / 2; i++) {
+            int temp = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = temp;
+        }
+        return array;
+    }
+
+    public static void main(String[] args){
+        ArrayReverse arrayReverse = new ArrayReverse();
+        int[] input = {1, 2, 3, 4, 5, 6, 7, 8};
+        System.out.println("Original array" + Arrays.toString(input));
+        System.out.println("Reversed array" + Arrays.toString(arrayReverse.reverse(input)));
+    }
+}
+
+---------------------------------------------------------------------------
+Java Program to Check the Equality of Two Arrays
+
+import java.util.Arrays;
+
+class ArrayEquality {
+    public static void main( String args[] ) {
+        int [] arr1 = new int [] {20, 5, -95, 43, 17};
+        int [] arr2 = new int [] {20, 5, -95, 43, 17};
+        System.out.println(Arrays.equals(arr1, arr2));
+    }
+}
+  
+
+   
